@@ -2,6 +2,7 @@ import React from 'react';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as GrIcons from 'react-icons/gr';
+import * as GiIcons from 'react-icons/gi';
 
 export const SidebarData = [
     {
@@ -11,9 +12,9 @@ export const SidebarData = [
         cName: 'nav-text',
     },
     {
-        title: "Services",
-        path: '/services',
-        icons: <GrIcons.GrServices />,
+        title: "Budget",
+        path: '/budget',
+        icons: <GiIcons.GiMoneyStack />,
         cName: 'nav-text',
     },
     {
@@ -21,7 +22,15 @@ export const SidebarData = [
         path: '/reports',
         icons: <IoIcons.IoIosPaper />,
         cName: 'nav-text',
-    }
+    },
+    {
+        title: "Services",
+        path: '/services',
+        icons: <GrIcons.GrServices />,
+        cName: 'nav-text',
+    },
+    
+
 ]
 
 

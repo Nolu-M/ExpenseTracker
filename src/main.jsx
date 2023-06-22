@@ -10,7 +10,8 @@ import {
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Reports from './pages/Reports';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import Budget from './pages/Budget';
 import "./index.css";
 
 const AppLayout = () => (
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services />,
+      },
+      {
+        path: "/budget",
+        element: <Budget />,
       },
 ]
   },
