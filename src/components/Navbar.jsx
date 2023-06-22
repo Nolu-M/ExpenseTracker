@@ -29,7 +29,7 @@ const showSidebar = () => setSidebar(!sidebar);
               return (
                 <li key={index} className={item.cName}>
                     <Link to={item.path}>
-                      {item.icon}
+                      {item.icons}
                       <span>{item.title}</span>
                     </Link>
                 </li>
