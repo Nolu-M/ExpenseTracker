@@ -7,11 +7,11 @@ import {
   Link,
   Outlet,
 } from "react-router-dom";
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Reports from './pages/Reports';
+import Dashboard from './pages/Dashboard';
+import Analytics from './pages/Analytics';
 import Navbar from './components/Navbar';
 import Budget from './pages/Budget';
+import Expenses from './pages/Expenses';
 import "./index.css";
 
 const AppLayout = () => (
@@ -27,19 +27,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <Dashboard />,
       },
       {
-        path: "/reports",
-        element: <Reports />,
-      },
-      {
-        path: "/services",
-        element: <Services />,
+        path: "/analytics",
+        element: <Analytics />,
       },
       {
         path: "/budget",
         element: <Budget />,
+      },
+      {
+        path: "/expenses",
+        element: <Expenses />,
       },
 ]
   },

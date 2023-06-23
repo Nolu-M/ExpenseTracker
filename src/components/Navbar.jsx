@@ -12,11 +12,12 @@ const showSidebar = () => setSidebar(!sidebar);
 
   return (
    <div className=''>
-    <IconContext.Provider value={{ color: "undefined"}}>
+    <IconContext.Provider value={{ color: "#fff"}}>
       <div className='navbar'>
         <Link to='#' className='menu-bars'>
           <FaIcons.FaBars onClick={showSidebar}/>
         </Link>
+        <button>theme</button>
       </div>
       <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
         <ul className='nav-menu-items' onClick={showSidebar}>
