@@ -14,6 +14,7 @@ import Budget from './pages/Budget';
 import Expenses from './pages/Expenses';
 import "./index.css";
 
+
 const AppLayout = () => (
   <>
     <Navbar />
