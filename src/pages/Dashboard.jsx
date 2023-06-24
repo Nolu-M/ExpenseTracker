@@ -1,11 +1,19 @@
-import React from "react";
+import * as React from 'react'
+import { fetchData } from '../Storage'
 
+export function dashboardLoader() {
+    const userName = fetchData("userName");
+    return { userName }
+}
 
-function Dashboard() {
+const Dashboard = () => {
+  const { userName } = useLoaderData()
+
   return (
-    <div className='home'>
-      <h1>Dashboard</h1>
-      
+    <div>
+      <h1>{userName}
+      Dashboard</h1>
+        Dashboard
     </div>
   )
 }

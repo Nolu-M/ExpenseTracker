@@ -1,48 +1,29 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom/client";
+import * as React from 'react'
+import * as ReactDOM from 'react-dom/client'
+import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
-  Outlet,
 } from "react-router-dom";
-import Dashboard from './pages/Dashboard';
-import Analytics from './pages/Analytics';
-import Navbar from './components/Navbar';
-import Budget from './pages/Budget';
-import Expenses from './pages/Expenses';
-import "./index.css";
+import Dashboard, { dashboardLoader } from "./pages/Dashboard";
+import Error from './pages/Error'
+import Main, { mainLoader } from './layouts/Main';
 
-
-const AppLayout = () => (
-  <>
-    <Navbar />
-    <Outlet />
-  </>
-);
 
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
-    children: [
+    path: "/",
+    element: <Main />,
+    loader: mainLoader,
+    errorElement: <Error/>,
+    children: [ 
       {
-        path: "/",
+        index: true,
         element: <Dashboard />,
+        loader: dashboardLoader,
+        errorElement: <Error/>
       },
-      {
-        path: "/analytics",
-        element: <Analytics />,
-      },
-      {
-        path: "/budget",
-        element: <Budget />,
-      },
-      {
-        path: "/expenses",
-        element: <Expenses />,
-      },
-]
+    ]
   },
 ]);
 
