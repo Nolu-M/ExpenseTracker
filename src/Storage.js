@@ -18,7 +18,7 @@ export const createBudget = ({
         id: crypto.randomUUID(),
         name: name,
         createAt: Date.now(),
-        amount: Number,
+        amount: +amount,
         color: generateRandomColor()
     }
     const existingBudgets = fetchData("budgets") ?? []
