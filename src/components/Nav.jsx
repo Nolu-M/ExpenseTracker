@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../assets/logo-black.png'
 import { Form, NavLink } from 'react-router-dom'
+import { TrashIcon } from '@heroicons/react/24/solid'
 
 const Nav = ({userName}) => {
   return (
@@ -25,6 +26,7 @@ const Nav = ({userName}) => {
                 >
                 <button className='btn btn--warning' type='submit'>
                     <span>Delete User</span>
+                    <TrashIcon width={20}/>
                 </button>
             </Form>
         )
