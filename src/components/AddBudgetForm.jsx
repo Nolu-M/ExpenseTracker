@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { Form, useFetcher } from 'react-router-dom'
+import { useFetcher } from 'react-router-dom'
 
 
 const AddBudgetForm = () => {
@@ -21,7 +21,8 @@ const AddBudgetForm = () => {
       <h2 className='h3'>
         Create Budget
       </h2>
-      <fetcher.Form method='post'
+      <fetcher.Form 
+      method='post'
       className='grid-sm'
       ref={formRef}>
         <div className="grid-xs">

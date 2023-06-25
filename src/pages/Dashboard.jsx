@@ -133,11 +133,11 @@ const Dashboard = () => {
               }
             </div>
         </div>
-        ) : <Intro />}
+        ) : (<Intro />)}
         
     </>
-  )
-}
+  );
+};
 
 export default Dashboard
 

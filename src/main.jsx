@@ -32,12 +32,12 @@ const router = createBrowserRouter([
         errorElement: <Error/>,
       },
       {
-        index: "budget/:id",
+        path: "budget/:id",
         element: <Budget />,
         loader: budgetLoader,
         action: budgetAction,
         errorElement: <Error/>,
-    children: [ 
+        children: [ 
           {
             path: "delete",
             action: deleteBudget,
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        index: "expenses",
+        path: "expenses",
         element: <Expenses />,
         loader: expensesLoader,
         action: expensesAction,
