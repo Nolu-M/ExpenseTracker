@@ -1,0 +1,1 @@
+The expense tracker was created using HTML, CSS and JavaScript.
