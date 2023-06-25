@@ -11,7 +11,9 @@ import Main, { mainLoader } from './layouts/Main';
 import { logoutAction } from './actions/logout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Expenses, { expensesLoader } from './pages/Expenses';
+import Expenses, { expensesAction, expensesLoader } from './pages/Expenses';
+import Budget, { budgetAction, budgetLoader } from './pages/Budget';
+import { deleteBudget } from './actions/deleteBudget';
 
 
 
@@ -27,16 +29,31 @@ const router = createBrowserRouter([
         element: <Dashboard />,
         loader: dashboardLoader,
         action: dashboardAction,
-        errorElement: <Error/>
+        errorElement: <Error/>,
+      },
+      {
+        index: "budget/:id",
+        element: <Budget />,
+        loader: budgetLoader,
+        action: budgetAction,
+        errorElement: <Error/>,
+    children: [ 
+          {
+            path: "delete",
+            action: deleteBudget,
+          },
+        ],
       },
       {
         index: "expenses",
         element: <Expenses />,
         loader: expensesLoader,
+        action: expensesAction,
+        errorElement: <Error/>,
       },
       {
         path: 'logout',
-        action: logoutAction
+        action: logoutAction,
       },
     ],
   },

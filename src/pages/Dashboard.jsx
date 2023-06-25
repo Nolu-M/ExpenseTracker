@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { createBudget, fetchData, waait, createExpense } from '../Storage'
+import { createBudget, fetchData, waait, createExpense, deleteItem } from '../Storage'
 import Intro from '../components/Intro';
 import { Link, useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -16,7 +16,7 @@ import Table from '../components/Table';
 export function dashboardLoader() {
     const userName = fetchData("userName");
     const budgets = fetchData("budgets");
-    const expenses = fetch("expenses");
+    const expenses = fetchData("expenses");
     return { userName, budgets, expenses }
 }
 
@@ -52,11 +52,23 @@ export async function dashboardAction({request}) {
       createExpense({
         name: values.newExpense,
         amount: values.newExpenseAmount,
-        budgetId: values.newExpenseBudget
+        budgetId: values.newExpenseBudget,
       })
         return toast.success(`Expense ${values.newExpense} created!`)
     }   catch(e) {
         throw new Error('There was a problem creating your expense.')
+    }
+  }
+
+  if (_action === 'deleteExpense') {
+    try {
+      deleteItem({
+        key: "expenses",
+        id: values.expenseId,
+      });
+        return toast.success('Expense deleted!');
+    }   catch(e) {
+        throw new Error('There was a problem deleting your expense.')
     }
   }
 
@@ -94,11 +106,12 @@ const Dashboard = () => {
                       expenses && expenses.length > 0 && (
                         <div className="grid-md">
                           <h2>Recent Expenses</h2>
-                          <Table expenses={expenses.
+                          <Table 
+                          expenses={expenses.
                           sort((a, b) => b.createdAt - a.createdAt)
                           .slice(0, 6)
                           }/>
-                          {expenses.length > 8 && (
+                          {expenses.length > 6 && (
                             <Link 
                             to='expenses'
                             className='btn btn--dark'>
