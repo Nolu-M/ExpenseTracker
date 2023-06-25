@@ -1,5 +1,7 @@
 import React from 'react'
 import { calculateSpentByBudget, formatCurrency, formatPercentage } from '../Storage';
+import { Link } from 'react-router-dom';
+import { BanknotesIcon } from '@heroicons/react/24/solid';
 
 
 const BudgetItem = ({budget, showDelete = false}) => {

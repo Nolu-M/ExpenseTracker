@@ -5,6 +5,7 @@ import BudgetItem from '../components/BudgetItem';
 import AddExpenseForm from '../components/AddExpenseForm';
 import Table from '../components/Table';
 import { toast } from 'react-toastify';
+import { BanknotesIcon } from '@heroicons/react/24/solid';
 
 
 export async function budgetLoader({params}) {
