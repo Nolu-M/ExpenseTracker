@@ -428,13 +428,14 @@ select {
   border-left: 0.15em solid white;
   border-right: 0.15em solid hsl(var(--bkg));
   border-bottom: 0.15em solid hsl(var(--bkg));
+  
 }
 
 .form-wrapper::before {
   content: "";
   position: absolute;
   inset: 0.55rem;
-  border: 2px dashed hsl(var(--text));
+  border: 2px dashed #e94154;
   border-radius: calc(var(--round-lg) * 0.6);
   z-index: -1;
 }

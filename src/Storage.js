@@ -42,7 +42,31 @@ export const createExpense = ({
     JSON.stringify([...existingExpenses, newItem]))
 }
 
+export const calculateSpentByBudget = (budgetId) => {
+    const expenses = fetchData('expenses') ?? [];
+    const budgetSpent = expenses.reduce((acc, expense) => {
+        if(expense.budgetId !== budgetId) return acc
+        return acc += expense.amount
+    }, 0)
+    return budgetSpent;
+}
+
+export const formatPercentage = (amt) => {
+    return amt.toLocaleString(undefined, {
+        style: "percent",
+        minimumFractionDigits: 0,
+    })
+}
+
+
+
 export const deleteItem = ({key}) => {
     return localStorage.removeItem(key)
 }
 
+export const formatCurrency = (amt) => {
+    return amt.toLocaleString(undefined, {
+        style: "currency",
+        currency: "ZAR"
+    })
+}
