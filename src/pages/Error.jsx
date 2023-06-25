@@ -13,7 +13,7 @@ const Error = () => {
       <div className='flex-md'>
         <button className='btn btn--dark' 
           onClick={() => navigate(-1) }>
-          <ArrowUturnLeftIcon/>
+          <ArrowUturnLeftIcon width={20}/>
           <span>Go back to previous page</span>
         </button>
         <Link to='/'
