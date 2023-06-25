@@ -11,12 +11,11 @@ const Main = () => {
   const { userName } = useLoaderData()
 
   return (
-    <div>
+    <div className='layout'>
         <Nav userName = {userName}/>
             <main>
                 <Outlet/>
             </main>
-        <img src="" alt="" />
     </div>
   )
 }

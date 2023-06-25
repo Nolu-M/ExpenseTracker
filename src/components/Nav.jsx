@@ -10,8 +10,8 @@ const Nav = ({userName}) => {
         to='/'
         aria-label='Go to the homepage'
       >
-        <img src={Logo} alt="girlcode-logo" />
-        <span>HomeBudget</span>
+        <img src={Logo} alt="girlcode-logo" height={30}/>
+        <span>Budget</span>
       </NavLink>
       {
         userName && (

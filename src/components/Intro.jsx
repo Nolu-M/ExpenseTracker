@@ -14,18 +14,19 @@ const Intro = () => {
             Invest in yourself. Start your journey today.
         </p>
         <Form methods='post'>
-            <input type="text" name='userName' required 
-            placeholder='Please enter your name' 
-            aria-label='Your Name' 
-            autoComplete='given-name'
+            <input type="text" 
+              name='userName' required 
+              placeholder='Please enter your name' 
+              aria-label='Your Name' 
+              autoComplete='given-name'
             />
             <button type='submit' className='btn btn--dark'>
                 <span>Create Account</span>
-                <UserPlusIcon/>
+                <UserPlusIcon width={20}/>
             </button>
         </Form>
       </div>
-      <img src={illustration} alt="person with money" />
+      <img src={illustration} alt="person holding container filled with money" width={600} />
     </div>
   )
 }

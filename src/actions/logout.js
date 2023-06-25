@@ -8,5 +8,5 @@ export async function logoutAction() {
         key: "userName"
     })
     toast.success("You have successfully deleted your account!")
-    return redirect('./')
+    return redirect('/')
 }
