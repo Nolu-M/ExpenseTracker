@@ -1,12 +1,13 @@
 import * as React from 'react'
-import { createBudget, fetchData, waait, createExpense  } from '../Storage'
+import { createBudget, fetchData, waait, createExpense } from '../Storage'
 import Intro from '../components/Intro';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import AddBudgetForm from '../components/AddBudgetForm';
 import AddExpenseForm from '../components/AddExpenseForm';
 import BudgetItem from '../components/BudgetItem';
 import Table from '../components/Table';
+
 
 
 
@@ -90,12 +91,20 @@ const Dashboard = () => {
                     }
                   </div>
                     {
-                      expenses && expenses.length > 0
-                      && (
+                      expenses && expenses.length > 0 && (
                         <div className="grid-md">
                           <h2>Recent Expenses</h2>
                           <Table expenses={expenses.
-                          sort((a, b) => b.createdAt -a.createdAt)}/>
+                          sort((a, b) => b.createdAt - a.createdAt)
+                          .slice(0, 6)
+                          }/>
+                          {expenses.length > 8 && (
+                            <Link 
+                            to='expenses'
+                            className='btn btn--dark'>
+                              View all expenses
+                            </Link>
+                          )}
                         </div>
                       )
                     }

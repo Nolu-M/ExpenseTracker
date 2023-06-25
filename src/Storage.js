@@ -1,5 +1,5 @@
 export const waait = () => new Promise(res => setTimeout(
-    res, Math.random() * 2500
+    res, Math.random() * 800
 ))
 
 const generateRandomColor = () => {
@@ -49,6 +49,10 @@ export const calculateSpentByBudget = (budgetId) => {
         return acc += expense.amount
     }, 0)
     return budgetSpent;
+}
+
+export const formatDateToLocaleString = (epoch) => {
+new Date(epoch).toLocaleString();
 }
 
 export const formatPercentage = (amt) => {
