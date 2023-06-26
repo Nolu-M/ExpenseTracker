@@ -13,7 +13,7 @@ const Intro = () => {
         <p>
             Invest in yourself. Start your journey today.
         </p>
-        <Form methods='post'>
+        <Form method='post'>
             <input type="text" 
               name='userName' required 
               placeholder='Please enter your name' 

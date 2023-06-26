@@ -23,7 +23,7 @@ export async function dashboardAction({request}) {
   const data = await request.formData();
   const {_action, ...values} = Object.fromEntries(data)
 
-  if (_action === "newUser") {
+  if (_action === 'newUser') {
     try {
       localStorage.setItem("userName", JSON.stringify(values.userName));
       return toast.success(`Welcome, ${values.userName}`);
